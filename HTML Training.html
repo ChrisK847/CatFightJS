@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+   <meta charset="utf-8">
+
    <style>
-      * {
-        box-sizing: border-box;
+      body {
+         background-color: black;
+         color: darkgrey;
+      }
+   
+      .characters {
+         background-color: darkgrey;
       }
 
-      /* Create three equal columns that floats next to each other */
       .column {
         float: left;
         width: 10%;
-        padding: 10px;
+        padding: 0px;
         height: 300px; /* Should be removed. Only for demonstration */
       }
 
-      /* Clear floats after the columns */
       .row:after {
-        content: "";
-        display: table;
-        clear: both;
+         content: "";
+         display: table;
+         clear: both;
       }
-      
-   </style>
-   <style type="text/css">
-   .data {
-         width: 30px;
-         height: 30px;
-         border-radius: 0%;
-         float: left;
-         margin-right: 50px;
+
+      table {
+         border: 1px solid #dddddd;
       }
-      
-      #data {
-            background-color: #5DADE2;
-      }
+
+      tr,td {
+         border: 1px solid #dddddd;
+         text-align: left;
+      }
+
    </style>
+
 </head>
-<body style="background-color:black;">
-<h2 style="color:grey;">Cat Fight 2021</h2>
-<h4 style="color:grey;">Don't let your pet off the leash!</h4>
- <div class="json" id="json">
-				<object 
+<body>
+
+   <h2>Cat Fight 2021</h2>
+   <h4>Don't let your pet off the leash!</h4>
+   <div>
+      <p id="cnt"></p>
+      <p id="caption"></p>
+   </div>
+   
+   
+
+<div id="d">
+   <object
       id="data"
-      type="application/json"
-      data="./Characters.txt">
-   	</object>
-   	<script>
-   	    document.getElementById("json").style.display = "none";
-   	</script>
-   	</div>
+      class="characters"
+      type="text/javascript"
+      data="./Characters.js">
+      width="50"
+      height="50"
+   </object>
+</div>
+
+   <script>
+     document.getElementById("d").style.display = "none"; //none, block
+   </script>
+
+   <table id="1">
+   </table>
+
+
    <div class="row"> 
       <div class="column">
-         <p id="demo" style="color:grey;">
+         <p id="demo">
          </p>
       </div>
       <div class="column">
@@ -59,6 +79,11 @@
          </p>
       </div>
    </div> 
-<script src="JavaScript Training.js"></script>
+
+
+   <script 
+      src="JavaScript Training.js">
+   </script>
+
 </body>
 </html>
