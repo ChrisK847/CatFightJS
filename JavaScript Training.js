@@ -1,33 +1,43 @@
-var objectJson = document.getElementById("data"); 
-
-objectJson.onload = function() { 
-   var data = objectJson.contentDocument.body;
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
-document.getElementById("demo").innerHTML += objectJson.tagName
 
-'document.getElementById("demo").innerHTML += data'
-'var characters = getContent(".\Characters.txt")'
-
-
-
-/*
-var strCharacters = JSON.stringify(characters);
-
-alert(strCharacters)
-var objCharacters = JSON.parse(strCharacters);
-var str = objCharacters.Breeds[1].Breed;
-document.getElementById("demo").innerHTML += "Row";
-document.getElementById("demo2").innerHTML += "Value";
-for (var i = 0;i < strCharacters.length;i++){
-   document.getElementById("demo").innerHTML += i + "<br>";
-   document.getElementById("demo2").innerHTML += strCharacters[i] + "<br>";
+function makeTableHTML(myArray) {
+    var result
+    result += "<tr>"
+    result += "<td>"+myArray[0][1]+"</td>";
+    result += "<td>"+(typeof myArray[2][1])+"</td>";
+    result += "<td>"+myArray[1][1]+"</td>";
+    result += "<td>"+myArray[2][1]+"</td>";
+    result += "</tr>"
+    result = result.replace('undefined','');
+    return result;
 }
-*/
-/*
-document.getElementById("demo").innerHTML = JSON.stringify(json)
-for (var key in obj) {
-  document.getElementById("demo").innerHTML =  obj[key];
+
+async function demo() {
+   let data = [];
+   let tbl = []
+   tbl += "<th>Row</th>";
+   tbl += "<th>TypeOf</th>";
+   tbl += "<th>Name</th>";
+   tbl += "<th>Value</th>";
+   document.getElementById("1").innerHTML += tbl;
+   var n = 0;
+
+   for (var i in object) {
+      await sleep(10);
+      data = [["row",n],["name", i],["value", object[i]]];
+      document.getElementById("cnt").innerHTML = "current count = " + (n + 1)
+      document.getElementById("1").innerHTML += makeTableHTML(data);
+      n++
+   }
 }
-*/
+var object = document.getElementById("data");
 
+//ENTER TREE HERE
+object = object
+//ENTER TREE HERE
 
+document.getElementById("caption").innerHTML += "object = [" + object + "]" + "<br>" + "typeOf object = [" + (typeof object) + "]" + "<br>" + "object.length = [" + object.length + "]";
+
+demo(object);
