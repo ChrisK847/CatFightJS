@@ -47,78 +47,90 @@ function makeTableHTML(myArray) {
     return result;
 };
 
-async function demo() {
-   let data = [];
-   let tbl = [];
-   let results = [];
-   let sortedResults = [];
-   let tableResults = [];
-   let filter = ["function","number"];
-   tbl += "<th>Row</th>";
-   tbl += "<th>TypeOf</th>";
-   tbl += "<th>Name</th>";
-   tbl += "<th>Value</th>";
-   //document.getElementById("1").innerHTML += tbl;
-   results.push(tbl)
-   var n = 0;
-   var m = 0;
+async function demo() {  
    
+   //CREATE TABLE HEADER
+   let header = [];
+   let table = [];
+   header += "<th>index</th>";
+   header += "<th>TypeOf</th>";
+   header += "<th>Name</th>";
+   header += "<th>Value</th>";
+   table.push(header);
+
+   //FILTER FOR OBJECT MEMBERS AND TYPES
+   var n = 0;
+   let filterByDataType = ["function","number"]; //filter by data type
+   let filteredData = []; // full filtered array for storing multiple data[] rows
+   let data = []; // temp array for creating a row structure
    for (var i in object) {
-      if (!(object[i] == null || object[i] == "") && !(filter.indexOf(typeof object[i])+1) ){
-         data = [["row",n],["type", (typeof object[i])],["name", i],["value", object[i]]];
-         //results.push(makeTableHTML(data));
-	 results.push(data + "<br>");
-         //results.push(data);
-         n++;
-      };
-      m++
+      if (
+         !(object[i] == null || object[i] == "") && 
+         !(filterByDataType.indexOf(typeof object[i])+1) )
+         {
+            data = [["index",n],["type", (typeof object[i])],["name", i],["value", object[i]]];
+            filteredData.push(data);
+            n++;
+         };
    }
    
-   //SORT ARRAY
-   //sortedResults = results.sort(
-   //  function(a,b) 
-   //   {
-   //      return a[1][1]-b[1][1]
-   //   }
-   //);
-
-   sortedResults = results;
-
-   alert(sortedResults)
-   
-   sortedResults = sortedResults.sort(
+/*
+   //SORT FILTERED RESULTS
+   let sortedData = [];
+   sortedData = filteredData;
+   sortedData = sortedData.sort( 
       function mysortfunction(a, b) {
-         var p1 = a[0].toLowerCase();
-         var p2 = b[1].toLowerCase();
+         var p1 = a[1][1];
+         var p2 = b[1][1];
+         if (p1 < p2) return -1;
+         if (p1 > p2) return 1;
+         return 0;
+      }
+   )
+*/
+
+   //SORT FILTERED RESULTS
+   let sortedData = [];
+   sortedData = filteredData;
+   sortedData = sortedData.sort( 
+      function mysortfunction(a, b) {
+         var p1 = a[1][1];
+         var p2 = b[1][1];
+         var p3 = a[2][1];
+         var p4 = b[2][1];
          if (p1 < p2) return -1;
          if (p1 > p2) return 1;
          return 0;
       }
    )
 
-   //for (var i in sortedResults) {
-      //tableResults.push(makeTableHTML(i)); 
-   //}
-   
-   document.getElementById("1").innerHTML = sortedResults;
-   document.getElementById("2").innerHTML = results;
-}
+   //THIS IS EXTRA INFO FOR SORTING FILTERED DATA. DO NOT UNCOMMENT
+   //Sorting by column
+   //(p1=a[0],p2=b[1])=column1 desc
+   //(p1=a[1],p2=b[2])=column1 asc
+   //Sort by second element in second column
+   //var p1 = a[1][1];
+   //var p2 = b[1][1];
+
+   //CREATE HTML TABLE WITH SORTED RESULTS
+   for (var i in sortedData) {
+      table.push(makeTableHTML(sortedData[i])); 
+   }
+
+   //ADD RESULTS TO HTML FOR DISPLAY
+   document.getElementById("1").innerHTML = table;
+
+} //END async function demo()
 
 //HTML OBJECT
 var object = document.getElementById("d");
 
 //ENTER TREE HERE
-object = object.children[0];
+object = object;
 //ENTER TREE HERE
 
+//DISPLAY OBJECT NAME,TYPE,VALUE
 document.getElementById("d").innerHTML += "object = [" + object + "]" + "<br>" + "typeOf object = [" + (typeof object) + "]" + "<br>" + "object.length = [" + object.length + "]";
+
+//DISPLAY DATA TABLE IN HTML
 demo(object);
-
-//var object1 = JSON.parse('{"rollno":101, "name":"Mayank", "age":20}');
-//document.getElementById("1").innerHTML += object1.rollno;
-//object = import data from "./Characters.json"
-//document.getElementById("demo").outerHTML += object;
-
-
-//IsJsonString(object)
-//tryParseJSON(object)
