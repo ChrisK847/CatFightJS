@@ -39,9 +39,9 @@ function makeTableHTML(myArray) {
     var result;
     result += "<tr>";
     result += "<td>"+myArray[0][1]+"</td>";
+    result += "<td>"+(typeof myArray[2][1])+"</td>";
     result += "<td>"+myArray[1][1]+"</td>";
     result += "<td>"+myArray[2][1]+"</td>";
-    result += "<td>"+myArray[3][1]+"</td>";
     result += "</tr>";
     result = result.replace('undefined','');
     return result;
@@ -50,61 +50,25 @@ function makeTableHTML(myArray) {
 async function demo() {
    let data = [];
    let tbl = [];
-   let results = [];
-   let sortedResults = [];
-   let tableResults = [];
-   let filter = ["function","number"];
    tbl += "<th>Row</th>";
    tbl += "<th>TypeOf</th>";
    tbl += "<th>Name</th>";
    tbl += "<th>Value</th>";
-   //document.getElementById("1").innerHTML += tbl;
-   results.push(tbl)
+   document.getElementById("1").innerHTML += tbl;
    var n = 0;
    var m = 0;
-   
+
    for (var i in object) {
-      if (!(object[i] == null || object[i] == "") && !(filter.indexOf(typeof object[i])+1) ){
-         data = [["row",n],["type", (typeof object[i])],["name", i],["value", object[i]]];
-         //results.push(makeTableHTML(data));
-	 results.push(data + "<br>");
-         //results.push(data);
+      if (!(object[i] == null || object[i] == "") && !(["function","number"].indexOf(typeof object[i])+1) ){
+         await sleep(10);
+         data = [["row",n],["name", i],["value", object[i]]];
+         document.getElementById("cnt").innerHTML = (n + 1) + " of " + (m + 1) + " object members not null or zero length string";
+         document.getElementById("1").innerHTML += makeTableHTML(data);
          n++;
       };
       m++
    }
-   
-   //SORT ARRAY
-   //sortedResults = results.sort(
-   //  function(a,b) 
-   //   {
-   //      return a[1][1]-b[1][1]
-   //   }
-   //);
-
-   sortedResults = results;
-
-   alert(sortedResults)
-   
-   sortedResults = sortedResults.sort(
-      function mysortfunction(a, b) {
-         var p1 = a[0].toLowerCase();
-         var p2 = b[1].toLowerCase();
-         if (p1 < p2) return -1;
-         if (p1 > p2) return 1;
-         return 0;
-      }
-   )
-
-   //for (var i in sortedResults) {
-      //tableResults.push(makeTableHTML(i)); 
-   //}
-   
-   document.getElementById("1").innerHTML = sortedResults;
-   document.getElementById("2").innerHTML = results;
 }
-
-//HTML OBJECT
 var object = document.getElementById("d");
 
 //ENTER TREE HERE

@@ -113,3 +113,199 @@ for (var i = 0;i < Object.keys(objDomAttributes).length;i++){
 //GET CHARACTERS.JSON FILE CONTENT. STORED LOCALLY AT ./characters.json, but pulled from html
 //var htmlCharacters = document.getElementById("data");
 //var htmlCharacters = document.getElementByID("data").contentDocument.documentElement;
+
+
+
+
+checkValidity | function checkValidity() { [native code] }
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+4 | undefined
+5 | undefined
+6 | undefined
+7 | undefined
+8 | undefined
+9 | undefined
+10 | undefined
+11 | undefined
+12 | undefined
+reportValidity | function reportValidity() { [native code] }
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+4 | undefined
+5 | undefined
+6 | undefined
+7 | undefined
+8 | undefined
+9 | undefined
+10 | undefined
+11 | undefined
+12 | undefined
+13 | undefined
+setCustomValidity | function setCustomValidity() { [native code] }
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+4 | undefined
+5 | undefined
+6 | undefined
+7 | undefined
+8 | undefined
+9 | undefined
+10 | undefined
+11 | undefined
+12 | undefined
+13 | undefined
+14 | undefined
+15 | undefined
+16 | undefined
+getSVGDocument | function getSVGDocument() { [native code] }
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+4 | undefined
+5 | undefined
+6 | undefined
+7 | undefined
+8 | undefined
+9 | undefined
+10 | undefined
+11 | undefined
+12 | undefined
+13 | undefined
+data | file:///C:/Users/cjohn/Desktop/Game%20Shortcuts/Javascript%20Local/CatFightJS/Characters.json
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+type | text/javascript
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+name |
+0 | undefined
+1 | undefined
+2 | undefined
+3 | undefined
+useMap |
+
+
+
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function demo() {
+   var data = [];
+   var object = document.getElementById("data");
+   for (var i in object) {
+      'document.getElementById("demo").innerHTML += i + " | " + object[i] + "<br>";'
+      await sleep(1000);
+      for (var x in i) {
+         if(object[x] !== undefined){
+            data += [i, object[i], x, object[x]];
+            'document.getElementById("demo").innerHTML += x + " | " + object[x] + "<br>";'
+         }
+      }
+      document.getElementById("demo").innerHTML += data + "<br>"
+   }
+}
+demo();
+
+
+
+//document.getElementById("demo").innerHTML += data + "<br>"
+
+
+
+
+
+
+i = checkValidity, x = 0, object[i] = function checkValidity() { [native code] }, i[x] = c
+i = checkValidity, x = 1, object[i] = function checkValidity() { [native code] }, i[x] = h
+i = checkValidity, x = 2, object[i] = function checkValidity() { [native code] }, i[x] = e
+i = checkValidity, x = 3, object[i] = function checkValidity() { [native code] }, i[x] = c
+i = checkValidity, x = 4, object[i] = function checkValidity() { [native code] }, i[x] = k
+i = checkValidity, x = 5, object[i] = function checkValidity() { [native code] }, i[x] = V
+i = checkValidity, x = 6, object[i] = function checkValidity() { [native code] }, i[x] = a
+i = checkValidity, x = 7, object[i] = function checkValidity() { [native code] }, i[x] = l
+i = checkValidity, x = 8, object[i] = function checkValidity() { [native code] }, i[x] = i
+i = checkValidity, x = 9, object[i] = function checkValidity() { [native code] }, i[x] = d
+i = checkValidity, x = 10, object[i] = function checkValidity() { [native code] }, i[x] = i
+i = checkValidity, x = 11, object[i] = function checkValidity() { [native code] }, i[x] = t
+i = checkValidity, x = 12, object[i] = function checkValidity() { [native code] }, i[x] = y
+i = reportValidity, x = 0, object[i] = function reportValidity() { [native code] }, i[x] = r
+i = reportValidity, x = 1, object[i] = function reportValidity() { [native code] }, i[x] = e
+i = reportValidity, x = 2, object[i] = function reportValidity() { [native code] }, i[x] = p
+i = reportValidity, x = 3, object[i] = function reportValidity() { [native code] }, i[x] = o
+i = reportValidity, x = 4, object[i] = function reportValidity() { [native code] }, i[x] = r
+i = reportValidity, x = 5, object[i] = function reportValidity() { [native code] }, i[x] = t
+i = reportValidity, x = 6, object[i] = function reportValidity() { [native code] }, i[x] = V
+i = reportValidity, x = 7, object[i] = function reportValidity() { [native code] }, i[x] = a
+i = reportValidity, x = 8, object[i] = function reportValidity() { [native code] }, i[x] = l
+i = reportValidity, x = 9, object[i] = function reportValidity() { [native code] }, i[x] = i
+i = reportValidity, x = 10, object[i] = function reportValidity() { [native code] }, i[x] = d
+i = reportValidity, x = 11, object[i] = function reportValidity() { [native code] }, i[x] = i
+i = reportValidity, x = 12, object[i] = function reportValidity() { [native code] }, i[x] = t
+i = reportValidity, x = 13, object[i] = function reportValidity() { [native code] }, i[x] = y
+i = setCustomValidity, x = 0, object[i] = function setCustomValidity() { [native code] }, i[x] = s
+i = setCustomValidity, x = 1, object[i] = function setCustomValidity() { [native code] }, i[x] = e
+i = setCustomValidity, x = 2, object[i] = function setCustomValidity() { [native code] }, i[x] = t
+i = setCustomValidity, x = 3, object[i] = function setCustomValidity() { [native code] }, i[x] = C
+i = setCustomValidity, x = 4, object[i] = function setCustomValidity() { [native code] }, i[x] = u
+i = setCustomValidity, x = 5, object[i] = function setCustomValidity() { [native code] }, i[x] = s
+i = setCustomValidity, x = 6, object[i] = function setCustomValidity() { [native code] }, i[x] = t
+i = setCustomValidity, x = 7, object[i] = function setCustomValidity() { [native code] }, i[x] = o
+i = setCustomValidity, x = 8, object[i] = function setCustomValidity() { [native code] }, i[x] = m
+i = setCustomValidity, x = 9, object[i] = function setCustomValidity() { [native code] }, i[x] = V
+i = setCustomValidity, x = 10, object[i] = function setCustomValidity() { [native code] }, i[x] = a
+i = setCustomValidity, x = 11, object[i] = function setCustomValidity() { [native code] }, i[x] = l
+i = setCustomValidity, x = 12, object[i] = function setCustomValidity() { [native code] }, i[x] = i
+i = setCustomValidity, x = 13, object[i] = function setCustomValidity() { [native code] }, i[x] = d
+i = setCustomValidity, x = 14, object[i] = function setCustomValidity() { [native code] }, i[x] = i
+i = setCustomValidity, x = 15, object[i] = function setCustomValidity() { [native code] }, i[x] = t
+i = setCustomValidity, x = 16, object[i] = function setCustomValidity() { [native code] }, i[x] = y
+
+
+
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function makeTableHTML(myArray) {
+    var result = "<table border=1>";
+    for(var i=0; i<myArray.length; i++) {
+        result += "<tr>";
+        for(var j=0; j<myArray[i].length; j++){
+            result += "<td>"+myArray[i][j]+"</td>";
+        }
+        result += "</tr>";
+    }
+    result += "</table>";
+
+    return result;
+}
+
+async function demo() {
+   let data = [];
+   var n = 0;
+   for (var i in object) {
+      await sleep(10);
+      data += [["row",n],["name", i],["value", object[i]]];
+      document.getElementById("demo").innerHTML = n
+      n++
+   }
+   document.getElementById("demo").innerHTML = makeTableHTML(data);
+}
+var object = document.getElementById("data");
+demo(object);
+

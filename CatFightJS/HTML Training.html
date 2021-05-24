@@ -10,8 +10,9 @@
          color: darkgrey;
       }
    
+
       .characters {
-         background-color: darkgrey;
+         background-color: black;
       }
 
       .column {
@@ -45,22 +46,40 @@
    <h4>Don't let your pet off the leash!</h4>
    <div>
       <p id="cnt"></p>
+      <p id="caption"></p>
    </div>
 
 <div id="d">
    <object
       id="data"
       class="characters"
-      type="text/javascript"
-      data="./Characters.json">
-      width="800"
-      height="600"
+      type="text/plain" <!--"text/javascript","application/json","text/plain","text/html"-->
+      data="./Characters.txt">
+      async=:"false"
    </object>
 </div>
+
+<!--
+<div id="e">
+   <script 
+      src="./Characters.js"
+      type="text/javascript">
+      function updateMe(){
+         var x = 0;
+         var activity="Cats";
+         foreach (JSON.stringify(i) in activity) {
+            alert(activity);
+         }
+      }
+   </script>
+</div>
+-->
 
    <table id="1">
    </table>
 
+   <table id="2">
+   </table>
 
    <div class="row"> 
       <div class="column">
@@ -75,14 +94,17 @@
 
 
    <script 
-      src="JavaScript Training.js">
+      src="JavaScript Training.js"
    </script>
+
 
    <script>
-      document.getElementById("data").style.display = "none"; //none, block
+      document.getElementById("data").style.display = "none";
    </script>
 
-
+<!-- CAN BE USED IN document.getElementById("data").style.display = "block";
+"none", "block", "visibility = "hidden"", https://www.w3schools.com/jsref/prop_style_display.asp, "block", "compact", "flex", "inline", "inline-block", "inline-flex", "inline-table", "list-item", "marker", "none", "run-in", "table", "table-caption", "table-cell", "table-column", "table-column-group", "table-footer-group", "table-header-group", "table-row", "table-row-group", "initial", "inherit"
+-->
 
 
 
