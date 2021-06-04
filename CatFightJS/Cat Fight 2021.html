@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   
+   <script type="module" src="CallGetJson.js"></script>
+   <!--script type="module" src="GetJson.js"></script-->
+
+   <style>
+      body {
+         background-color: black;
+         color: darkgrey;
+      }
+   
+
+      .characters {
+         background-color: white;
+         color: blue;
+      }
+
+      .column {
+        float: left;
+        width: 10%;
+        padding: 0px;
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+
+      .row:after {
+
+         display: table;
+         clear: both;
+      }
+
+      table {
+         border: 1px solid #dddddd;
+      }
+
+      tr,td {
+         border: 1px solid #dddddd;
+         text-align: left;
+      }
+
+   </style>
+
+</head>
+<body>
+
+   <h2>Cat Fight 2021</h2>
+   <h4>Don't let your pet off the leash!</h4>
+   
+   <div>
+      <p id="cnt"></p>
+      <p id="caption"></p>
+   </div>
+
+   <table id="1">
+   </table>
+
+   <table id="2">
+   </table>
+
+   <div class="row">
+      <div class="column">
+         <p id="demo">
+         </p>
+      </div>
+      <div class="column">
+         <p id="demo2">
+         </p>
+      </div>
+   </div>
+
+
+<!-- CAN BE USED IN document.getElementById("data").style.display = "block";
+"none", "block", "visibility = "hidden"", https://www.w3schools.com/jsref/prop_style_display.asp, "block", "compact", "flex", "inline", "inline-block", "inline-flex", "inline-table", "list-item", "marker", "none", "run-in", "table", "table-caption", "table-cell", "table-column", "table-column-group", "table-footer-group", "table-header-group", "table-row", "table-row-group", "initial", "inherit"
+-->
+
+</body>
+</html>
