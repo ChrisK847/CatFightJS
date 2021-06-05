@@ -1,8 +1,9 @@
 export function characters(){
-  fetch('./Characters.json')
+  return fetch('./Characters.json')
   .then(response => response.json())
-  .then(data => { 
-    //document.getElementById("1").innerHTML += data.Cats
-    return data
+  .then(function(charactersObject) {
+    var catBreeds = charactersObject.Cats;
+    //console.log("done loading characters");
+    return catBreeds;
   })
 }

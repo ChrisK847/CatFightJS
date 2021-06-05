@@ -1,6 +1,6 @@
 {
-    "Cats":  [
-                            {
+    "Cats":  {
+   "British Shorthair Cat": {
 				"Press to Select": 1,
 				"Breed": "British Shorthair Cat",
                                 "HP":  17,
@@ -21,9 +21,9 @@
                                 "avgSpd": 0,
 				"Pet Name": ""
                             },
-                            {
+             "Ragdoll Cat": {
 				"Press to Select": 2,
-				"Pet Name": "Ragdoll Cat",
+				"Breed": "Ragdoll Cat",
                                 "HP":  10,
                                 "STR":  7,
                                 "DEF":  7,
@@ -42,9 +42,9 @@
                                 "avgSpd": 0,
 				"Pet Name": ""
                             },
-                            {
+             "Siamese Cat": {
 				"Press to Select": 3,
-				"Pet Name": "Siamese Cat",
+				"Breed": "Siamese Cat",
                                 "HP":  17,
                                 "STR":  4,
                                 "DEF":  3,
@@ -63,5 +63,5 @@
                                 "avgSpd": 0,
 				"Pet Name": ""
                             }
-                        ]
+                        }
 }

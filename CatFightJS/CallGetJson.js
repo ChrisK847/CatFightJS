@@ -1,22 +1,31 @@
 import {characters} from "./GetJson.js";
-//let characters = import("./GetJson.js")//returns promise. Not sure what do to with it.
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+var breeds;
 
-async function loop(characters){
-  var i = 0
-  document.getElementById("1").innerHTML += (typeof characters) + "<br>"
-  while(characters() == undefined){
-    document.getElementById("1").innerHTML += i + "<br>"
-    if(i == 20){
-      document.getElementById("1").innerHTML += "break" + "<br>"
-      break;
+characters().then(response =>{
+    var resultsCharacters = response;
+    //document.getElementById("1").innerHTML += "type = " + (typeof resultsCharacters) + "<br>";
+    //document.getElementById("1").innerHTML += "length = " + resultsCharacters.length + "<br>";
+    //document.getElementById("1").innerHTML += "content = " + resultsCharacters + "<br>";
+    //console.log(response);
+    breeds = response;
+  }).then(response2 => {
+    main();
+  })
+
+
+function main(){
+  
+  console.log(breeds["British Shorthair Cat"]);
+  for(var i in breeds){
+    //var breedCharacteristics = Object.keys(breeds[i]);
+    //console.log(breedCharacteristics);
+    for(var x in breeds[i]){
+       document.getElementById("1").innerHTML += x + ":" + breeds[i][x] + "<br>";
+       //console.log(breedCharacteristics);
     }
-    await sleep(50);
+    document.getElementById("1").innerHTML += "<br>";
     i++
   }
-  document.getElementById("1").innerHTML += characters + "<br>"
 }
-loop(characters);
+
